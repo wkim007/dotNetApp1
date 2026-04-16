@@ -1,0 +1,150 @@
+{
+  "name": "Retail Ordering Domain",
+  "entities": [
+    {
+      "name": "Customer",
+      "properties": [
+        {
+          "name": "CustomerId",
+          "type": "Guid",
+          "isPrimaryKey": true,
+          "isNullable": false
+        },
+        {
+          "name": "Email",
+          "type": "string",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "DisplayName",
+          "type": "string",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "CreatedUtc",
+          "type": "DateTime",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "properties": [
+        {
+          "name": "OrderId",
+          "type": "Guid",
+          "isPrimaryKey": true,
+          "isNullable": false
+        },
+        {
+          "name": "CustomerId",
+          "type": "Guid",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "Status",
+          "type": "OrderStatus",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "SubmittedUtc",
+          "type": "DateTime",
+          "isPrimaryKey": false,
+          "isNullable": true
+        }
+      ]
+    },
+    {
+      "name": "OrderLine",
+      "properties": [
+        {
+          "name": "OrderLineId",
+          "type": "Guid",
+          "isPrimaryKey": true,
+          "isNullable": false
+        },
+        {
+          "name": "OrderId",
+          "type": "Guid",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "ProductId",
+          "type": "Guid",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "Quantity",
+          "type": "int",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "UnitPrice",
+          "type": "decimal",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "properties": [
+        {
+          "name": "ProductId",
+          "type": "Guid",
+          "isPrimaryKey": true,
+          "isNullable": false
+        },
+        {
+          "name": "Sku",
+          "type": "string",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "Name",
+          "type": "string",
+          "isPrimaryKey": false,
+          "isNullable": false
+        },
+        {
+          "name": "CurrentPrice",
+          "type": "decimal",
+          "isPrimaryKey": false,
+          "isNullable": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "name": "CustomerOrders",
+      "sourceEntity": "Customer",
+      "targetEntity": "Order",
+      "sourceCardinality": 0,
+      "targetCardinality": 1
+    },
+    {
+      "name": "OrderLines",
+      "sourceEntity": "Order",
+      "targetEntity": "OrderLine",
+      "sourceCardinality": 0,
+      "targetCardinality": 1
+    },
+    {
+      "name": "ProductOrderLines",
+      "sourceEntity": "Product",
+      "targetEntity": "OrderLine",
+      "sourceCardinality": 0,
+      "targetCardinality": 1
+    }
+  ]
+}

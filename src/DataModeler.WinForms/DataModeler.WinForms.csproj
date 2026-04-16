@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataModeler.Core\DataModeler.Core.csproj" />
+  </ItemGroup>
+
+  <!--
+    Replace the placeholder path below with the Tom Sawyer Perspectives .NET assembly location
+    made available by your licensed SDK installation.
+
+    <ItemGroup>
+      <Reference Include="TomSawyer.Perspectives">
+        <HintPath>..\..\vendor\TomSawyer\TomSawyer.Perspectives.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+  -->
+</Project>
