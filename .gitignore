@@ -7,3 +7,4 @@ doc/
 *.userosscache
 *.VC.db
 *.VC.opendb
+.DS_Store
