@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
 using com.tomsawyer.graph;
@@ -26,7 +28,7 @@ internal sealed class TomSawyerRenderer : ITomSawyerRenderer
         };
     }
 
-    public Control View => _host;
+    public System.Windows.Forms.Control View => _host;
 
     public void Render(DiagramGraph graph)
     {
@@ -43,8 +45,11 @@ internal sealed class TomSawyerRenderer : ITomSawyerRenderer
 
         foreach (var edge in graph.Edges)
         {
-            if (!nodeMap.TryGetValue(edge.SourceId, out var sourceNode) ||
-                !nodeMap.TryGetValue(edge.TargetId, out var targetNode))
+            TSENode sourceNode;
+            TSENode targetNode;
+
+            if (!nodeMap.TryGetValue(edge.SourceId, out sourceNode) ||
+                !nodeMap.TryGetValue(edge.TargetId, out targetNode))
             {
                 continue;
             }

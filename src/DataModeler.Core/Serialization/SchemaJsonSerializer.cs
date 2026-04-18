@@ -1,28 +1,27 @@
-using System.Text.Json;
+using System.IO;
+using System.Runtime.Serialization.Json;
 using DataModeler.Core.Models;
 
-namespace DataModeler.Core.Serialization;
-
-public sealed class SchemaJsonSerializer
+namespace DataModeler.Core.Serialization
 {
-    private static readonly JsonSerializerOptions SerializerOptions = new()
+    public sealed class SchemaJsonSerializer
     {
-        WriteIndented = true,
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-    };
+        public SchemaModel DeserializeFromFile(string filePath)
+        {
+            using (var stream = File.OpenRead(filePath))
+            {
+                var serializer = new DataContractJsonSerializer(typeof(SchemaModel));
+                return (SchemaModel)serializer.ReadObject(stream);
+            }
+        }
 
-    public SchemaModel Deserialize(string json)
-    {
-        var schema = JsonSerializer.Deserialize<SchemaModel>(json, SerializerOptions);
-        return schema ?? throw new InvalidOperationException("Schema payload did not deserialize into a valid schema model.");
+        public void SerializeToFile(SchemaModel schema, string filePath)
+        {
+            using (var stream = File.Create(filePath))
+            {
+                var serializer = new DataContractJsonSerializer(typeof(SchemaModel));
+                serializer.WriteObject(stream, schema);
+            }
+        }
     }
-
-    public SchemaModel DeserializeFromFile(string filePath) =>
-        Deserialize(File.ReadAllText(filePath));
-
-    public string Serialize(SchemaModel schema) =>
-        JsonSerializer.Serialize(schema, SerializerOptions);
-
-    public void SerializeToFile(SchemaModel schema, string filePath) =>
-        File.WriteAllText(filePath, Serialize(schema));
 }

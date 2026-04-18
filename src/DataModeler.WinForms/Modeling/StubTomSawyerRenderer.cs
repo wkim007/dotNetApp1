@@ -1,10 +1,14 @@
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 using DataModeler.Core.Graph;
 
 namespace DataModeler.WinForms.Modeling;
 
 internal sealed class StubTomSawyerRenderer : ITomSawyerRenderer
 {
-    private readonly RichTextBox _textBox = new()
+    private readonly RichTextBox _textBox = new RichTextBox
     {
         Dock = DockStyle.Fill,
         ReadOnly = true,
@@ -28,10 +32,11 @@ internal sealed class StubTomSawyerRenderer : ITomSawyerRenderer
             "Entities"
         };
 
-        lines.AddRange(graph.Nodes.Select(node => $"- {node.Label}"));
+        lines.AddRange(graph.Nodes.Select(node => "- " + node.Label));
         lines.Add(string.Empty);
         lines.Add("Relationships");
-        lines.AddRange(graph.Edges.Select(edge => $"- {edge.SourceId} -> {edge.TargetId} [{edge.Label}]"));
+        lines.AddRange(graph.Edges.Select(edge =>
+            "- " + edge.SourceId + " -> " + edge.TargetId + " [" + edge.Label + "]"));
 
         _textBox.Lines = lines.ToArray();
     }

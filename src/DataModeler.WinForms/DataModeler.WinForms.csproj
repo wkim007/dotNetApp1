@@ -1,12 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <Platforms>AnyCPU;x64</Platforms>
+    <LangVersion>latest</LangVersion>
 
     <TomSawyerSdkDir Condition="'$(TomSawyerSdkDir)' == ''">C:\Apps\Tom Sawyer Software\Tom Sawyer Perspectives\9.2\.NET</TomSawyerSdkDir>
     <TomSawyerLibDir>$(TomSawyerSdkDir)\lib</TomSawyerLibDir>
@@ -18,14 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="tsperspectivesbase92dep">
-      <HintPath>$(TomSawyerLibDir)\tsperspectivesbase92dep.dll</HintPath>
+    <Reference Include="tsperspectivesbase92dev">
+      <HintPath>$(TomSawyerLibDir)\tsperspectivesbase92dev.dll</HintPath>
       <Private>true</Private>
     </Reference>
-    <Reference Include="tsperspectives92dep">
-      <HintPath>$(TomSawyerLibDir)\tsperspectives92dep.dll</HintPath>
+    <Reference Include="tsperspectives92dev">
+      <HintPath>$(TomSawyerLibDir)\tsperspectives92dev.dll</HintPath>
       <Private>true</Private>
     </Reference>
+
     <Reference Include="spring">
       <HintPath>$(TomSawyerThirdPartyDir)\spring.dll</HintPath>
       <Private>true</Private>
@@ -52,7 +52,76 @@
     </Reference>
     <Reference Include="IKVM.Runtime.JNI">
       <HintPath>$(TomSawyerThirdPartyDir)\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.API.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="xalan">
+      <HintPath>$(TomSawyerThirdPartyDir)\xalan.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.Direct2D1.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.Direct3D11.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.DXGI.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.Mathematics.dll</HintPath>
       <Private>true</Private>
     </Reference>
   </ItemGroup>
+
+  <ItemGroup>
+    <TomSawyerThirdPartyAssemblies Include="$(TomSawyerThirdPartyDir)\*.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="%(TomSawyerThirdPartyAssemblies.Filename)">
+      <HintPath>%(TomSawyerThirdPartyAssemblies.Identity)</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyTomSawyerLicenseFile" AfterTargets="Build">
+    <Copy
+      SourceFiles="$(TomSawyerSdkDir)\bin\licensing.local.properties"
+      DestinationFolder="$(TargetDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
 </Project>

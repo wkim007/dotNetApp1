@@ -4,7 +4,7 @@ namespace DataModeler.WinForms.Modeling;
 
 public interface ITomSawyerRenderer
 {
-    Control View { get; }
+    System.Windows.Forms.Control View { get; }
 
     void Render(DiagramGraph graph);
 }
