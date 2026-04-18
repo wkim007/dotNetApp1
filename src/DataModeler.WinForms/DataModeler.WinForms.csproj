@@ -3,23 +3,56 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Platforms>AnyCPU;x64</Platforms>
+
+    <TomSawyerSdkDir Condition="'$(TomSawyerSdkDir)' == ''">C:\Apps\Tom Sawyer Software\Tom Sawyer Perspectives\9.2\.NET</TomSawyerSdkDir>
+    <TomSawyerLibDir>$(TomSawyerSdkDir)\lib</TomSawyerLibDir>
+    <TomSawyerThirdPartyDir>$(TomSawyerLibDir)\thirdparty</TomSawyerThirdPartyDir>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataModeler.Core\DataModeler.Core.csproj" />
   </ItemGroup>
 
-  <!--
-    Replace the placeholder path below with the Tom Sawyer Perspectives .NET assembly location
-    made available by your licensed SDK installation.
-
-    <ItemGroup>
-      <Reference Include="TomSawyer.Perspectives">
-        <HintPath>..\..\vendor\TomSawyer\TomSawyer.Perspectives.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-  -->
+  <ItemGroup>
+    <Reference Include="tsperspectivesbase92dep">
+      <HintPath>$(TomSawyerLibDir)\tsperspectivesbase92dep.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="tsperspectives92dep">
+      <HintPath>$(TomSawyerLibDir)\tsperspectives92dep.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="spring">
+      <HintPath>$(TomSawyerThirdPartyDir)\spring.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.AWT.WinForms.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Core.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Util.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.Runtime.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.Runtime.JNI.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
 </Project>

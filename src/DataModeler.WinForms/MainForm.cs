@@ -1,3 +1,4 @@
+using System.IO;
 using DataModeler.Core.Graph;
 using DataModeler.Core.Models;
 using DataModeler.Core.Serialization;
