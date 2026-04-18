@@ -108,10 +108,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TomSawyerThirdPartyAssemblies Include="$(TomSawyerThirdPartyDir)\*.dll" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="%(TomSawyerThirdPartyAssemblies.Filename)">
       <HintPath>%(TomSawyerThirdPartyAssemblies.Identity)</HintPath>
       <Private>true</Private>
