@@ -12,7 +12,7 @@ namespace DataModeler.Core.Models
             Relationships = new List<RelationshipDefinition>();
         }
 
-        public SchemaModel(string name, IReadOnlyList<EntityDefinition> entities, IReadOnlyList<RelationshipDefinition> relationships)
+        public SchemaModel(string name, List<EntityDefinition> entities, List<RelationshipDefinition> relationships)
         {
             Name = name;
             Entities = entities;
@@ -23,10 +23,10 @@ namespace DataModeler.Core.Models
         public string Name { get; set; }
 
         [DataMember(Name = "entities")]
-        public IReadOnlyList<EntityDefinition> Entities { get; set; }
+        public List<EntityDefinition> Entities { get; set; }
 
         [DataMember(Name = "relationships")]
-        public IReadOnlyList<RelationshipDefinition> Relationships { get; set; }
+        public List<RelationshipDefinition> Relationships { get; set; }
     }
 
     [DataContract]
@@ -37,7 +37,7 @@ namespace DataModeler.Core.Models
             Properties = new List<PropertyDefinition>();
         }
 
-        public EntityDefinition(string name, IReadOnlyList<PropertyDefinition> properties)
+        public EntityDefinition(string name, List<PropertyDefinition> properties)
         {
             Name = name;
             Properties = properties;
@@ -47,7 +47,7 @@ namespace DataModeler.Core.Models
         public string Name { get; set; }
 
         [DataMember(Name = "properties")]
-        public IReadOnlyList<PropertyDefinition> Properties { get; set; }
+        public List<PropertyDefinition> Properties { get; set; }
     }
 
     [DataContract]

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DataModeler.Core.Models;
 
 namespace DataModeler.Core.Services
@@ -10,11 +11,11 @@ namespace DataModeler.Core.Services
         {
             return new SchemaModel(
                 "Retail Ordering Domain",
-                new[]
+                new List<EntityDefinition>
                 {
                     new EntityDefinition(
                         "Customer",
-                        new[]
+                        new List<PropertyDefinition>
                         {
                             new PropertyDefinition("CustomerId", "Guid", isPrimaryKey: true, isNullable: false),
                             new PropertyDefinition("Email", "string", isNullable: false),
@@ -23,7 +24,7 @@ namespace DataModeler.Core.Services
                         }),
                     new EntityDefinition(
                         "Order",
-                        new[]
+                        new List<PropertyDefinition>
                         {
                             new PropertyDefinition("OrderId", "Guid", isPrimaryKey: true, isNullable: false),
                             new PropertyDefinition("CustomerId", "Guid", isNullable: false),
@@ -32,7 +33,7 @@ namespace DataModeler.Core.Services
                         }),
                     new EntityDefinition(
                         "OrderLine",
-                        new[]
+                        new List<PropertyDefinition>
                         {
                             new PropertyDefinition("OrderLineId", "Guid", isPrimaryKey: true, isNullable: false),
                             new PropertyDefinition("OrderId", "Guid", isNullable: false),
@@ -42,7 +43,7 @@ namespace DataModeler.Core.Services
                         }),
                     new EntityDefinition(
                         "Product",
-                        new[]
+                        new List<PropertyDefinition>
                         {
                             new PropertyDefinition("ProductId", "Guid", isPrimaryKey: true, isNullable: false),
                             new PropertyDefinition("Sku", "string", isNullable: false),
@@ -50,7 +51,7 @@ namespace DataModeler.Core.Services
                             new PropertyDefinition("CurrentPrice", "decimal", isNullable: false)
                         })
                 },
-                new[]
+                new List<RelationshipDefinition>
                 {
                     new RelationshipDefinition("CustomerOrders", "Customer", "Order", Cardinality.One, Cardinality.Many),
                     new RelationshipDefinition("OrderLines", "Order", "OrderLine", Cardinality.One, Cardinality.Many),
