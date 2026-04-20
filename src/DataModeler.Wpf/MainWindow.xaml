@@ -1,0 +1,148 @@
+<Window x:Class="DataModeler.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sample .NET Data Modeler"
+        Width="1440"
+        Height="920"
+        MinWidth="1100"
+        MinHeight="700"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFF5F7FA">
+  <DockPanel>
+    <ToolBar DockPanel.Dock="Top"
+             Background="White"
+             BorderThickness="0,0,0,1"
+             BorderBrush="#FFD8DEE9"
+             Padding="8,4">
+      <Button Click="LoadSampleModelClick" Padding="12,6">Load Sample Model</Button>
+      <Button Click="OpenSchemaClick" Padding="12,6">Open Schema</Button>
+      <Button Click="ApplyLayoutClick" Padding="12,6">Apply Layout</Button>
+    </ToolBar>
+
+    <StatusBar DockPanel.Dock="Bottom"
+               Background="White"
+               BorderThickness="1,1,1,0"
+               BorderBrush="#FFD8DEE9">
+      <TextBlock x:Name="StatusTextBlock" Text="Ready" />
+    </StatusBar>
+
+    <Grid Margin="12">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="430" />
+        <ColumnDefinition Width="12" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Grid Grid.Column="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="12" />
+          <RowDefinition Height="220" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                Background="White"
+                BorderBrush="#FFD8DEE9"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="10">
+          <TreeView x:Name="EntityTreeView"
+                    SelectedItemChanged="EntityTreeSelectionChanged" />
+        </Border>
+
+        <Border Grid.Row="2"
+                Background="White"
+                BorderBrush="#FFD8DEE9"
+                BorderThickness="1"
+                CornerRadius="8"
+                Padding="10">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Properties"
+                       FontSize="15"
+                       FontWeight="SemiBold"
+                       Foreground="#FF2D3748"
+                       Margin="0,0,0,8" />
+            <DataGrid x:Name="PropertiesGrid"
+                      Grid.Row="1"
+                      AutoGenerateColumns="False"
+                      HeadersVisibility="Column"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserResizeRows="False"
+                      GridLinesVisibility="Horizontal"
+                      BorderThickness="0"
+                      RowHeaderWidth="0">
+              <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="2*" />
+              </DataGrid.Columns>
+            </DataGrid>
+          </Grid>
+        </Border>
+      </Grid>
+
+      <Border Grid.Column="2"
+              Background="White"
+              BorderBrush="#FFD8DEE9"
+              BorderThickness="1"
+              CornerRadius="8"
+              Padding="12">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="Auto" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Graph View"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Foreground="#FF2D3748"
+                       VerticalAlignment="Center" />
+            <Button Grid.Column="1"
+                    Click="OpenTomSawyerProjectClick"
+                    Padding="12,6"
+                    Margin="12,0,0,0">
+              Open TSP File
+            </Button>
+            <Button Grid.Column="2"
+                    Click="OpenTomSawyerDataClick"
+                    Padding="12,6"
+                    Margin="12,0,0,0">
+              Open Data File
+            </Button>
+            <Button Grid.Column="3"
+                    Click="ApplyTomSawyerFilesClick"
+                    Padding="12,6"
+                    Margin="12,0,0,0">
+              Apply
+            </Button>
+            <Button Grid.Column="4"
+                    Click="ShowDiagnosticsClick"
+                    Padding="12,6"
+                    Margin="12,0,0,0">
+              Diagnostics
+            </Button>
+          </Grid>
+          <Border Grid.Row="1"
+                  BorderBrush="#FFE2E8F0"
+                  BorderThickness="1"
+                  Background="#FFFFFFFF">
+            <ContentControl x:Name="GraphHost" />
+          </Border>
+        </Grid>
+      </Border>
+    </Grid>
+  </DockPanel>
+</Window>

@@ -1,0 +1,372 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+
+    <TomSawyerSdkDir Condition="'$(TomSawyerSdkDir)' == ''">C:\Apps\Tom Sawyer Software\Tom Sawyer Perspectives\9.2\.NET</TomSawyerSdkDir>
+    <TomSawyerLibDir>$(TomSawyerSdkDir)\lib</TomSawyerLibDir>
+    <TomSawyerThirdPartyDir>$(TomSawyerLibDir)\thirdparty</TomSawyerThirdPartyDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataModeler.Core\DataModeler.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="batik">
+      <HintPath>$(TomSawyerThirdPartyDir)\batik.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="bson">
+      <HintPath>$(TomSawyerThirdPartyDir)\bson.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="commons-configuration">
+      <HintPath>$(TomSawyerThirdPartyDir)\commons-configuration.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="commons-collections4">
+      <HintPath>$(TomSawyerThirdPartyDir)\commons-collections4.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="commons-fileupload">
+      <HintPath>$(TomSawyerThirdPartyDir)\commons-fileupload.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="commons-io">
+      <HintPath>$(TomSawyerThirdPartyDir)\commons-io.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="commons-lang">
+      <HintPath>$(TomSawyerThirdPartyDir)\commons-lang.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="commons-math3">
+      <HintPath>$(TomSawyerThirdPartyDir)\commons-math3.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="concurrentlinkedhashmap-lru">
+      <HintPath>$(TomSawyerThirdPartyDir)\concurrentlinkedhashmap-lru.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="fontbox">
+      <HintPath>$(TomSawyerThirdPartyDir)\fontbox.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="graphics2d">
+      <HintPath>$(TomSawyerThirdPartyDir)\graphics2d.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="gremlin">
+      <HintPath>$(TomSawyerThirdPartyDir)\gremlin.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="gremlin-groovy">
+      <HintPath>$(TomSawyerThirdPartyDir)\gremlin-groovy.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="groovy-json">
+      <HintPath>$(TomSawyerThirdPartyDir)\groovy-json.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="guava">
+      <HintPath>$(TomSawyerThirdPartyDir)\guava.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="gwt-advanced-components">
+      <HintPath>$(TomSawyerThirdPartyDir)\gwt-advanced-components.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="gwt-highcharts">
+      <HintPath>$(TomSawyerThirdPartyDir)\gwt-highcharts.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="gwt-maps">
+      <HintPath>$(TomSawyerThirdPartyDir)\gwt-maps.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="gwt-openlayers-client">
+      <HintPath>$(TomSawyerThirdPartyDir)\gwt-openlayers-client.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="gwt-servlet">
+      <HintPath>$(TomSawyerThirdPartyDir)\gwt-servlet.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="httpclient">
+      <HintPath>$(TomSawyerThirdPartyDir)\httpclient.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="httpcore">
+      <HintPath>$(TomSawyerThirdPartyDir)\httpcore.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.AWT.WinForms.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Beans.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Charsets.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Corba.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Core.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Jdbc.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Localedata.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Management.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Media.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Misc.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Naming.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Nashorn.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Remoting.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Security.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Text.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Tools.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.Util.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.API.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.Reflection">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.Reflection.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.Runtime.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI">
+      <HintPath>$(TomSawyerThirdPartyDir)\IKVM.Runtime.JNI.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="jackson">
+      <HintPath>$(TomSawyerThirdPartyDir)\jackson.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="janusgraph-core">
+      <HintPath>$(TomSawyerThirdPartyDir)\janusgraph-core.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="javax.inject">
+      <HintPath>$(TomSawyerThirdPartyDir)\javax.inject.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="jcl-over-slf4j">
+      <HintPath>$(TomSawyerThirdPartyDir)\jcl-over-slf4j.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="jena">
+      <HintPath>$(TomSawyerThirdPartyDir)\jena.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="jffi">
+      <HintPath>$(TomSawyerThirdPartyDir)\jffi.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="jts-core">
+      <HintPath>$(TomSawyerThirdPartyDir)\jts-core.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="log4j-api">
+      <HintPath>$(TomSawyerThirdPartyDir)\log4j-api.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="log4j-slf4j-impl">
+      <HintPath>$(TomSawyerThirdPartyDir)\log4j-slf4j-impl.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="logback-classic">
+      <HintPath>$(TomSawyerThirdPartyDir)\logback-classic.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="logback-core">
+      <HintPath>$(TomSawyerThirdPartyDir)\logback-core.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="mongodb-driver-core">
+      <HintPath>$(TomSawyerThirdPartyDir)\mongodb-driver-core.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="mongodb-driver-sync">
+      <HintPath>$(TomSawyerThirdPartyDir)\mongodb-driver-sync.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="neo4j-java-driver">
+      <HintPath>$(TomSawyerThirdPartyDir)\neo4j-java-driver.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="orientdb">
+      <HintPath>$(TomSawyerThirdPartyDir)\orientdb.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="pdfbox">
+      <HintPath>$(TomSawyerThirdPartyDir)\pdfbox.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="poi">
+      <HintPath>$(TomSawyerThirdPartyDir)\poi.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="poi-ooxml">
+      <HintPath>$(TomSawyerThirdPartyDir)\poi-ooxml.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="reactive-streams">
+      <HintPath>$(TomSawyerThirdPartyDir)\reactive-streams.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="serializer">
+      <HintPath>$(TomSawyerThirdPartyDir)\serializer.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="servlet-api">
+      <HintPath>$(TomSawyerThirdPartyDir)\servlet-api.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.Direct2D1.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.Direct3D11.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.DXGI.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics">
+      <HintPath>$(TomSawyerThirdPartyDir)\SharpDX.Mathematics.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="slf4j-api">
+      <HintPath>$(TomSawyerThirdPartyDir)\slf4j-api.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="spatial4j">
+      <HintPath>$(TomSawyerThirdPartyDir)\spatial4j.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="spring">
+      <HintPath>$(TomSawyerThirdPartyDir)\spring.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="tsperspectives92dev">
+      <HintPath>$(TomSawyerLibDir)\tsperspectives92dev.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="tsperspectivesbase92dev">
+      <HintPath>$(TomSawyerLibDir)\tsperspectivesbase92dev.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="validation-api">
+      <HintPath>$(TomSawyerThirdPartyDir)\validation-api.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="xalan">
+      <HintPath>$(TomSawyerThirdPartyDir)\xalan.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="xml-apis">
+      <HintPath>$(TomSawyerThirdPartyDir)\xml-apis.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="xml-apis-ext">
+      <HintPath>$(TomSawyerThirdPartyDir)\xml-apis-ext.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyTomSawyerLicenseFile" AfterTargets="Build">
+    <Copy
+      SourceFiles="$(TomSawyerSdkDir)\bin\licensing.local.properties"
+      DestinationFolder="$(TargetDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
+</Project>

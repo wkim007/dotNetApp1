@@ -2,6 +2,7 @@
 bin/
 obj/
 doc/
+examples/
 *.user
 *.suo
 *.userosscache

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModeler.Core", "src\Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModeler.WinForms", "src\DataModeler.WinForms\DataModeler.WinForms.csproj", "{A2385A68-2D58-495A-99D8-5D2A467A0F8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModeler.Wpf", "src\DataModeler.Wpf\DataModeler.Wpf.csproj", "{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,14 @@ Global
 		{A2385A68-2D58-495A-99D8-5D2A467A0F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2385A68-2D58-495A-99D8-5D2A467A0F8A}.Release|x64.ActiveCfg = Release|x64
 		{A2385A68-2D58-495A-99D8-5D2A467A0F8A}.Release|x64.Build.0 = Release|x64
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Debug|x64.ActiveCfg = Debug|x64
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Debug|x64.Build.0 = Debug|x64
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Release|x64.ActiveCfg = Release|x64
+		{2A3BF9B9-6AF0-4DA6-B9A0-BC570D420E61}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
