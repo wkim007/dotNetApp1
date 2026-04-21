@@ -22,7 +22,7 @@ namespace DataModeler.Wpf.Modeling
         private readonly Border _diagnosticBorder;
         private readonly TextBlock _diagnosticText;
         private readonly StringBuilder _diagnosticBuilder = new StringBuilder();
-        private readonly TSModel _model;
+        private TSModel _model;
         private string _constructionDiagnostics;
         private TSWPFDrawingView _drawingView;
         private TSNProject _project;
@@ -37,7 +37,6 @@ namespace DataModeler.Wpf.Modeling
 
         public TomSawyerWpfRenderer()
         {
-            _model = new TSDefaultModel();
             _container = new Grid();
 
             _diagnosticText = new TextBlock
@@ -75,7 +74,7 @@ namespace DataModeler.Wpf.Modeling
             _diagnosticBorder.Visibility = Visibility.Collapsed;
 
             AppendDiagnostic("Renderer constructed.");
-            AppendDiagnostic("TSDefaultModel created.");
+            ResetModel();
             TryCreateBasicTutorialView();
             _constructionDiagnostics = _diagnosticBuilder.ToString();
             UpdateDiagnosticText();
@@ -206,7 +205,7 @@ namespace DataModeler.Wpf.Modeling
 
             _diagnosticBuilder.Clear();
             AppendDiagnostic("Renderer reinitialized.");
-            AppendDiagnostic("TSDefaultModel retained.");
+            ResetModel();
             TryCreateBasicTutorialView();
             _constructionDiagnostics = _diagnosticBuilder.ToString();
             UpdateDiagnosticText();
@@ -421,6 +420,12 @@ namespace DataModeler.Wpf.Modeling
         private static string SafeValue(string value)
         {
             return string.IsNullOrWhiteSpace(value) ? "(none)" : value;
+        }
+
+        private void ResetModel()
+        {
+            _model = new TSDefaultModel();
+            AppendDiagnostic("Fresh TSDefaultModel created.");
         }
 
         private void AppendDiagnostic(string line)
