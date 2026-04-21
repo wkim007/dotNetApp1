@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><TSX>
   <project xmlMinorVersion="0" xmlVersion="45">
+    <extensionsPath value="extensions.xml"/>
+    <classPath value="output"/>
     <preferences>
       <preference name="colorTheme:webColorTheme" value="Silver"/>
       <preference name="behavior:progressDelay" value="1500"/>
@@ -19,23 +21,28 @@
       <image id="11" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyklEQVR42q2SKw7DMAyGe5Udo3RH2BV6hMLQwcDC0EJDw9BCw8LQwsBBL85mLZP63iL9spXk/+w8quqfwwfmUkAxa7eZwoND5C9hAjg/8SGz5KpdEBzjp2LK1VzmFsIKgF4A42hWNDF3MCwDYAOga5uAsnVtX6Ppx2WAS7eIBaQ0y5ysd51bfwmLIb+53rx2k83p/CPcGU29DpGN0mo++ztK5cE1HAmY+pahrfnwD0VzzZCANkfXXI5DpLK3t98gYtJOTgEUcto8N541NGSMkK8K/AAAAABJRU5ErkJggg==]]></image>
       <image id="12" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA2ElEQVR42q2SKxLDIBCGc5UeIzZH6BVyhEhsJTISG4lExkYikdhIZOWWfzuboTPNs2VmZ5eB/9sHVNU/1xiJSrM+sR0W+/ikmOjDXAaYcaZD4kZNbIjL/S7EhcTZ+HKOBYBYgNrGDYB/A0Qo4mU/E/V2WgfYAiBCeDGcKeP3AVKuCGUO8GoI6wCTp4g2lqEVYhjO+95sv4R2kd9cnlL6Z3HuP9gHOVVvQ3ARpaJf8cg8mZaSt+SHjmxX0+kf6lTDkOg0e9PezkOQedT33yAQSSWXAAK5LP62XmTiXoOxHE73AAAAAElFTkSuQmCC]]></image>
       <image id="13" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABt0lEQVR42mNgIBPo9Wu3qDcrH8apoHvdw//NKy79xCXvOsXhtcN0m/+YMrEM3DNm9i4uX3x+XVDnET+QkH63VrrXCvvd/xuusgW2H20pW3j+6bRZvfcYAhnEwHpClvj+T1oS/WLt6rVLGo5U/HedZfcF2czQNd5HEraG/58+fcIvoKv+g1yHYmnu+vSH2ZsTe/Zs3KMXvzDyf9LqyD8oCvoZJGcvn/0NxGyYdTipa8Lc67hDB80L/0P/M4du8DoUMtvv354N+0OyN8WfBlr4G6teSeun/xWdn/3X9Hr+3yDo+X/LqBf/HZJe/vfIfPU/c3vC/zVr1twHevUvyMs4DYCxO/vmzqqdedgcxPYvePWfoZOBl2DcKjo9QwlMtzn2x0HhElb+GjPgsAEtn+f/kQMzdW30e5Bh8fVv/mfOW38DFDagMMJpgGHw8/8wZ89ZMec8zNlp7W//w6I7dmH4f2QXohgACjS7+Jf/3dJf/vfNe/U/tOz1/5jaN//z+yEGZKxJ+hm+1P8/sgtxRp3nCrtqnV4NK5A0SAwkh9MLoDQNTNs7cHkNlCfwBqJ6k3KzXq+2H8NAAADGqgg+rcdQGwAAAABJRU5ErkJggg==]]></image>
-      <image id="14" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABu0lEQVR42mNgIBGUbM3dbTRZ67/ZZP3/5pMN/4MFT5w4wbdq1Sr7devWeRDCEbODLmZsSfjfcKjyv8sMe4gBy5cvd25qavrX2tp6urGxESdua2w77d7t9KnhSMX/5bfn/3ef4QwxYP369Z5tbW0nifGCR5/rUYNe3f82Ey3/K9YpQAwAOQ1kAzEG3Hp1y+Dw7cMOIHz89nEHkg3ACkBeaG5uxvDCnutfepad+75/3rEP+6fsebX/yftfBlgNALrAtb29/VZXV5cPMCwguLnZp2Xt9dtLj375v+XYu/+58+/+v/rwizMuA+yBBnzp7u4+DdQMwa2Np2uXXfy08/Tn/9dvfP5fMOfW//P3Pzvg9AK2WKhYdPlo7vwH//Nn3fjvXHfq/8W7H7C7YNO6TfYtDS0YBoD8fBlo6/n77x3O337v8P79fwEMzeefn3eYuKynLLc560b34naH9//fC5AUA2bTdP97LnL6H7jc679en/r/Uw9POZNkgOkkfXC6XnZ73n/Habb/jwMTCEkGqLUr/Y9dFfa/bHfBf40Wlf+Hbh4izQXZqzK3pyxJ3p60KH579JzI7Tde3tAjRT8AA5sceMw4V5oAAAAASUVORK5CYII=]]></image>
-      <image id="15" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR42mNgwAGmHPv+v2Xr+//Fa5//ZyAV9PT0gDUfO/f+f9SUa/9BfJI0g2iQRhB2qj72H1kcr3Ozl+J3rmaP5n/FasX/IBpFAt25uLDTHMv/QWu9wIagGACyGdm52LwFwoZAm0GGYBiAy48wjYTUYUhg04jXgOy9Uf9hGF9o4wxEkMat99b+7zlWjTcWcAciyOZzLUAXJOM1AG8govsxaKvXf6+lTmANBBMSNkNATp1yDhL3JGlG9i/IaxgBNugAAHtqyW6XUk8wAAAAAElFTkSuQmCC]]></image>
-      <image id="16" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuElEQVR42qWSIQ/DIBCF+1cqKydrkUgkdrJyElt5ElmLRCJnkZWTs5WVk29A0qRNSGjpSy4h5O7LuwdNk5H2P4xuxcsuaGoUh/28QupPHWAwSxpmyl8HEBFy58vDm4TjEJaDmx51gDCsZwKbbgCkFXhQh9sZnM5keEtstb/vgotYrWpRBLivBc3joTHmEFfqSutEAHkVHDwPjTGHPkCKDm5nsJd0Itk+9Yw5XfoHOXHD0j/oawEl/QHST4gGXc7OgwAAAABJRU5ErkJggg==]]></image>
-      <image id="17" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVR42r1SoRKDMAzdryCRSCwSicQikUjsZGXlLLISia1ETs5OTk5mvBwpYbDtbrtb7t5Bk5fX9qUH6+8EHPsbo3FXOswheZ3bBAh+XFDaMxljGFLTOQ0WqLsrEwRZ68NuezmJIKAXq+Qe8a8C9VBS4XJG3qWU2DjUYhNT1EaE70uB3GVkRxOAtZiXnVIqXcEiGwEBdpZmMx65SYujvjmBDjRIc+sbSibyxxPoSCcSiOmMxCwe4B+5twJfTeErgcZXhJEBzyTcE2ZpA/UY+Qpo7C+OzXp+6zIJCOj8agoQQHM9VJsTgIh6MEuZmGkTf4kHC99SaPEoFQ0AAAAASUVORK5CYII=]]></image>
-      <image id="18" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvUlEQVR42r1QLQ+DMBDlryCRyNpKZGUtshKJRVYiZysrK7GVlZOzSOTkrXfJCGPL2lXsJefufVZVARrdAF491lDCr/iFgbAdiRQJtJHIokhRAq31d9Ls7zC5DQa77o/SCYrcGZZ2RLIPG8j5CuiGh+Q5aIqdFFBmJTIf/f7cGQ5qkdDmjvapZ7L7E8PSkxveeQOeVSES3c2C9uPbBtkCSFYxyXEDaUV6g+yeL519T27Hzj9h7xymcoFz57/iAdEQmsrhh+E9AAAAAElFTkSuQmCC]]></image>
-      <image id="19" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuElEQVR42mNggIK9Tgz/GYgEGGpBAqQaAFcP45BjAFY9U459/9+y9f3/4rXP4ZJRW4P+B631+u+11JKwJSDNx869/x815dr/np4eMAZpnnKu57/lHCIMAGkEYafqY3DFXkud/mfvjfpv2KNJnDdBthIjRhsDio8lg50LwjAxTaDTFasV/2sS4wWQxq331v7vOdcCD0QnYOCBAhJkCFEGgDRn702GKwaFPghjNYAqCYmipEyVzDSgAAC1Z54JsS6ChwAAAABJRU5ErkJggg==]]></image>
-      <image id="20" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyElEQVR42tWSKxODMBCE81eQyEpsJBIZWxmJxFaejKxFRkbGRiIra5HIyi1HJ0zLo+1ATW/mTOb2u80mQmwoLwXE3toNYcAixIQbTq5DaVtscsHi0HRQ5gIiGlq5AoXNkdcZZoBoJdJ03Q5iWYVxmMWmIWTnByDOjg6m9+Gtz5vyWkJ7hQOlmM3PaAuA6dmL62kQpT8O27jXAG+TZKG7WlCoxvO0t86dVAk+vicDWKx7J/EVZB8eB7kI+OZXcXgMWQX87H//Z90BLpKh7vcb0uIAAAAASUVORK5CYII=]]></image>
+      <image id="14" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVR42mNgQAM9PT3/GUgFyJpwsYk2BJ2mPQDZBMPEiNPWJVSPhSnHvv/v2QvByOzspc//J8+595+wYUDFx869h+Nz177/33sMQoMMIewyoAEgxegYZAhOFyADkLPRbYaxo+ZcI94F6JpBdPFaIrwAUgRzAbJmol0AMgCkGBsO6jlH2ABQQIEMAYU4CFdvhdgM0uxUfYw6KRQAdJYC/LxjNYQAAAAASUVORK5CYII=]]></image>
+      <image id="15" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAbklEQVR42mNgQAM9PT3/GUgFyJpwsYk2BJ2mPQDZBMPEiNPWJcj0lGPf//fs/f6f7FgoXvv8P0mGYDUMqJksQ5AByACQaygyBKQZZAgIk20ISHPynHuUGQIyAISDes6RbwhIs1P1McoNocgAZAAAiQ56wk7/8mAAAAAASUVORK5CYII=]]></image>
+      <image id="16" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACUklEQVR42q2T7U9ScRTH/VugtZYvbNVctVZbD2uKCHoVIkBSiMkNG62RJuMy02wrZ0OaL5paao9S8caMmLFSyzbNmpqW18ogbsGK0HtBIN03oqWxwFee7fvu9/n8ds7Oycpa7/JUVfHnSNL8nqykZzVqdkZTzr5TK+kpjcI8oZLy14S9ej3xkSSZ77ZmRAfdiE2MIjYyBK63Bx6DFuNlBDOmEBMZ4TkdyS3c68Hy7FvEXfcR77Yi3n4RP++0YWnYBb/JgFF5ATciO5Qq+aTT8RKwj73VjWV6EvEr5xGyWjDfXIvoZQtiLRSiTacR7bsN7wk1hqUHfYPEAd6/AipQb8bS5Mvkj4s2CsELRkQa9Clhz6gRdVzHa9EeDJTupVYEH0gtHXbcQNzejlBTNb6pStJmoVoNrrkOfksNnhC76BUBrdNEYo8ciNssCJ0zIFP5ZUIEyTLMt7fCLcqNrAhmNKrIor0T0UYDImcr1xQEtArMt7WiX7x1VTBdoaCDTXVYtFJgTymTD9NGLkKo3gSPyQiXIGe1hTcqKUVLBIjYuxDSSBDUFv8HM4cLwBwpRrj7KobE2+EUZK8OcbyC4L0qL/F5j5cjfLczObCAQvwHlBWCkSRgiRhcVwemjpbAmbfZ1yvYyEvZhTGZkBiR5XFzxxQI3+zEj0YKfrUcX5QyBBvM4K51YFpZhIf52dyD/E3pt/FFYsOel+5nRot342utEcGWS8l8rjmJp8Jtv2EmI/y3nkn38QfEO81uYgf9uCiX7RdsYZ2FOXSiZ3Nf3gb+ul/vL30s06FxPF6DAAAAAElFTkSuQmCC]]></image>
+      <image id="17" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABu0lEQVR42mNgIBGUbM3dbTRZ67/ZZP3/5pMN/4MFT5w4wbdq1Sr7devWeRDCEbODLmZsSfjfcKjyv8sMe4gBy5cvd25qavrX2tp6urGxESdua2w77d7t9KnhSMX/5bfn/3ef4QwxYP369Z5tbW0nifGCR5/rUYNe3f82Ey3/K9YpQAwAOQ1kAzEG3Hp1y+Dw7cMOIHz89nEHkg3ACkBeaG5uxvDCnutfepad+75/3rEP+6fsebX/yftfBlgNALrAtb29/VZXV5cPMCwguLnZp2Xt9dtLj375v+XYu/+58+/+v/rwizMuA+yBBnzp7u4+DdQMwa2Np2uXXfy08/Tn/9dvfP5fMOfW//P3Pzvg9AK2WKhYdPlo7vwH//Nn3fjvXHfq/8W7H7C7YNO6TfYtDS0YBoD8fBlo6/n77x3O337v8P79fwEMzeefn3eYuKynLLc560b34naH9//fC5AUA2bTdP97LnL6H7jc679en/r/Uw9POZNkgOkkfXC6XnZ73n/Habb/jwMTCEkGqLUr/Y9dFfa/bHfBf40Wlf+Hbh4izQXZqzK3pyxJ3p60KH579JzI7Tde3tAjRT8AA5sceMw4V5oAAAAASUVORK5CYII=]]></image>
+      <image id="18" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR42mNgwAGmHPv+v2Xr+//Fa5//ZyAV9PT0gDUfO/f+f9SUa/9BfJI0g2iQRhB2qj72H1kcr3Ozl+J3rmaP5n/FasX/IBpFAt25uLDTHMv/QWu9wIagGACyGdm52LwFwoZAm0GGYBiAy48wjYTUYUhg04jXgOy9Uf9hGF9o4wxEkMat99b+7zlWjTcWcAciyOZzLUAXJOM1AG8govsxaKvXf6+lTmANBBMSNkNATp1yDhL3JGlG9i/IaxgBNugAAHtqyW6XUk8wAAAAAElFTkSuQmCC]]></image>
+      <image id="19" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuElEQVR42qWSIQ/DIBCF+1cqKydrkUgkdrJyElt5ElmLRCJnkZWTs5WVk29A0qRNSGjpSy4h5O7LuwdNk5H2P4xuxcsuaGoUh/28QupPHWAwSxpmyl8HEBFy58vDm4TjEJaDmx51gDCsZwKbbgCkFXhQh9sZnM5keEtstb/vgotYrWpRBLivBc3joTHmEFfqSutEAHkVHDwPjTGHPkCKDm5nsJd0Itk+9Yw5XfoHOXHD0j/oawEl/QHST4gGXc7OgwAAAABJRU5ErkJggg==]]></image>
+      <image id="20" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVR42r1SoRKDMAzdryCRSCwSicQikUjsZGXlLLISia1ETs5OTk5mvBwpYbDtbrtb7t5Bk5fX9qUH6+8EHPsbo3FXOswheZ3bBAh+XFDaMxljGFLTOQ0WqLsrEwRZ68NuezmJIKAXq+Qe8a8C9VBS4XJG3qWU2DjUYhNT1EaE70uB3GVkRxOAtZiXnVIqXcEiGwEBdpZmMx65SYujvjmBDjRIc+sbSibyxxPoSCcSiOmMxCwe4B+5twJfTeErgcZXhJEBzyTcE2ZpA/UY+Qpo7C+OzXp+6zIJCOj8agoQQHM9VJsTgIh6MEuZmGkTf4kHC99SaPEoFQ0AAAAASUVORK5CYII=]]></image>
+      <image id="21" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvUlEQVR42r1QLQ+DMBDlryCRyNpKZGUtshKJRVYiZysrK7GVlZOzSOTkrXfJCGPL2lXsJefufVZVARrdAF491lDCr/iFgbAdiRQJtJHIokhRAq31d9Ls7zC5DQa77o/SCYrcGZZ2RLIPG8j5CuiGh+Q5aIqdFFBmJTIf/f7cGQ5qkdDmjvapZ7L7E8PSkxveeQOeVSES3c2C9uPbBtkCSFYxyXEDaUV6g+yeL519T27Hzj9h7xymcoFz57/iAdEQmsrhh+E9AAAAAElFTkSuQmCC]]></image>
+      <image id="22" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAuElEQVR42mNggIK9Tgz/GYgEGGpBAqQaAFcP45BjAFY9U459/9+y9f3/4rXP4ZJRW4P+B631+u+11JKwJSDNx869/x815dr/np4eMAZpnnKu57/lHCIMAGkEYafqY3DFXkud/mfvjfpv2KNJnDdBthIjRhsDio8lg50LwjAxTaDTFasV/2sS4wWQxq331v7vOdcCD0QnYOCBAhJkCFEGgDRn702GKwaFPghjNYAqCYmipEyVzDSgAAC1Z54JsS6ChwAAAABJRU5ErkJggg==]]></image>
+      <image id="23" type="png"><![CDATA[iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyElEQVR42tWSKxODMBCE81eQyEpsJBIZWxmJxFaejKxFRkbGRiIra5HIyi1HJ0zLo+1ATW/mTOb2u80mQmwoLwXE3toNYcAixIQbTq5DaVtscsHi0HRQ5gIiGlq5AoXNkdcZZoBoJdJ03Q5iWYVxmMWmIWTnByDOjg6m9+Gtz5vyWkJ7hQOlmM3PaAuA6dmL62kQpT8O27jXAG+TZKG7WlCoxvO0t86dVAk+vicDWKx7J/EVZB8eB7kI+OZXcXgMWQX87H//Z90BLpKh7vcb0uIAAAAASUVORK5CYII=]]></image>
     </images>
     <compositeUIs/>
-    <module tags="Device, Connection">
+    <module tags="Connection, Device">
       <schema name="Network">
         <attributeTypes/>
         <modelElementTypes>
           <modelElementType name="Device">
             <attributeTypes>
               <attributeType identifier="true" name="ID">
-                <type name="LongValue"/>
+                <type name="IntegerValue">
+                  <default value="0"/>
+                </type>
               </attributeType>
               <attributeType identifier="false" name="Host Name">
                 <type name="StringValue">
@@ -47,18 +54,18 @@
                   <default value="Okay"/>
                 </type>
               </attributeType>
-              <attributeType identifier="false" name="IP Address">
-                <type name="StringValue">
-                  <default value="xx.xx.xx.xx"/>
-                </type>
+              <attributeType identifier="false" name="Location">
+                <type name="StringValue"/>
               </attributeType>
               <attributeType identifier="false" name="Type">
                 <type name="StringValue">
                   <default value="Workstation"/>
                 </type>
               </attributeType>
-              <attributeType identifier="false" name="Location">
-                <type name="StringValue"/>
+              <attributeType identifier="false" name="IP Address">
+                <type name="StringValue">
+                  <default value="xx.xx.xx.xx"/>
+                </type>
               </attributeType>
               <attributeType identifier="false" name="Country">
                 <type name="StringValue"/>
@@ -68,7 +75,9 @@
           <modelElementType name="Connection">
             <attributeTypes>
               <attributeType identifier="true" name="ID">
-                <type name="LongValue"/>
+                <type name="IntegerValue">
+                  <default value="0"/>
+                </type>
               </attributeType>
               <attributeType identifier="false" name="From Device">
                 <type name="ReferenceValue">
@@ -86,7 +95,7 @@
               </attributeType>
               <attributeType identifier="false" name="Capacity">
                 <type name="IntegerValue">
-                  <default value="0"/>
+                  <default value="100"/>
                 </type>
               </attributeType>
               <attributeType identifier="false" name="Status">
@@ -100,32 +109,8 @@
       </schema>
       <integrators>
         <excelIntegrator name="Network Excel Data" updateMode="updateAll">
-          <connection fileName="Basic.xls" locale="en_US"/>
+          <connection fileName="data/EditingTools.xls" locale="en_US"/>
           <dataBinding>
-            <attributedObjectBinding attributedObjectTypeName="Device" isModelAttribute="false" isReadOnly="false">
-              <excelSheet excelRegion="A2:G+" sheetName="Devices"/>
-              <attributeBinding attributeName="Status" attributedObjectTypeName="Device" identifier="false">
-                <excelLocation location="C"/>
-              </attributeBinding>
-              <attributeBinding attributeName="ID" attributedObjectTypeName="Device" identifier="true">
-                <excelLocation location="A"/>
-              </attributeBinding>
-              <attributeBinding attributeName="Type" attributedObjectTypeName="Device" identifier="false">
-                <excelLocation location="E"/>
-              </attributeBinding>
-              <attributeBinding attributeName="IP Address" attributedObjectTypeName="Device" identifier="false">
-                <excelLocation location="D"/>
-              </attributeBinding>
-              <attributeBinding attributeName="Host Name" attributedObjectTypeName="Device" identifier="false">
-                <excelLocation location="B"/>
-              </attributeBinding>
-              <attributeBinding attributeName="Location" attributedObjectTypeName="Device" identifier="false">
-                <excelLocation location="F"/>
-              </attributeBinding>
-              <attributeBinding attributeName="Country" attributedObjectTypeName="Device" identifier="false">
-                <excelLocation location="G"/>
-              </attributeBinding>
-            </attributedObjectBinding>
             <attributedObjectBinding attributedObjectTypeName="Connection" isModelAttribute="false" isReadOnly="false">
               <excelSheet excelRegion="A2:E+" sheetName="Connections"/>
               <attributeBinding attributeName="Status" attributedObjectTypeName="Connection" identifier="false">
@@ -144,6 +129,27 @@
                 <excelLocation location="A"/>
               </attributeBinding>
             </attributedObjectBinding>
+            <attributedObjectBinding attributedObjectTypeName="Device" isModelAttribute="false" isReadOnly="false">
+              <excelSheet excelRegion="A2:F+" sheetName="Devices"/>
+              <attributeBinding attributeName="Status" attributedObjectTypeName="Device" identifier="false">
+                <excelLocation location="C"/>
+              </attributeBinding>
+              <attributeBinding attributeName="Type" attributedObjectTypeName="Device" identifier="false">
+                <excelLocation location="E"/>
+              </attributeBinding>
+              <attributeBinding attributeName="Location" attributedObjectTypeName="Device" identifier="false">
+                <excelLocation location="F"/>
+              </attributeBinding>
+              <attributeBinding attributeName="IP Address" attributedObjectTypeName="Device" identifier="false">
+                <excelLocation location="D"/>
+              </attributeBinding>
+              <attributeBinding attributeName="Host Name" attributedObjectTypeName="Device" identifier="false">
+                <excelLocation location="B"/>
+              </attributeBinding>
+              <attributeBinding attributeName="ID" attributedObjectTypeName="Device" identifier="true">
+                <excelLocation location="A"/>
+              </attributeBinding>
+            </attributedObjectBinding>
           </dataBinding>
         </excelIntegrator>
       </integrators>
@@ -156,7 +162,7 @@
               <property name="Tooltip" value="&lt;IP Address&gt;"/>
             </uiProperties>
             <uiAttributes>
-              <attribute name="Background_Color" value="97 203 255"/>
+              <attribute name="Background_Color" value="$mapToColor(&lt;Location&gt;)"/>
               <attribute name="Expanded_Border_Style" value="2"/>
               <attribute name="Expanded_Border_Width" value="1"/>
               <attribute name="Expanded_Show_Summary" value="true"/>
@@ -177,17 +183,6 @@
             <uiAttributes>
               <attribute name="Background_Color" value="255 255 255"/>
               <attribute name="Transparent_Background" value="false"/>
-            </uiAttributes>
-          </template>
-          <template name="Down Device" parentTemplate="Device" type="Node">
-            <uiProperties uiType="Basic.Ellipse"/>
-            <uiAttributes>
-              <attribute name="Background_Color" value="0 96 255"/>
-              <attribute name="Expanded_Border_Style" value="2"/>
-              <attribute name="Expanded_Border_Width" value="1"/>
-              <attribute name="Expanded_Show_Summary" value="true"/>
-              <attribute name="Gradient_Finish_Color" value="249 39 39"/>
-              <attribute name="Text_Color" value="255 255 255"/>
             </uiAttributes>
           </template>
           <template name="Default Drawing Template" parentTemplate="" type="Drawing">
@@ -242,23 +237,25 @@
               <rule elementTypeName="Device">
                 <actions>
                   <addNodeAction id="node.Device.&lt;ID&gt;" replaceTags="false" tags="Device" templateName="Device"/>
-                  <ifAction description="If: Device Status">
-                    <equalsCondition comparisonType="String" valueID1="&lt;Status&gt;" valueID2="Down"/>
-                    <actionList>
-                      <applyNodeTemplateAction id="node.Device.&lt;ID&gt;" templateName="Down Device"/>
-                    </actionList>
-                  </ifAction>
                 </actions>
               </rule>
               <rule elementTypeName="Connection">
                 <actions>
-                  <addEdgeAction id="edge.Connection.&lt;ID&gt;" replaceTags="true" source="node.Device.&lt;From Device&gt;" tags="Connection" target="node.Device.&lt;To Device&gt;" templateName="Connection"/>
-                  <addEdgeLabelAction id="edgeLabel.Connection.&lt;ID&gt;" parent="edge.Connection.&lt;ID&gt;" replaceTags="true" tags="Connection" templateName="Capacity"/>
-                  <setEdgeLabelLayoutPropertiesAction description="Set Edge Label Layout Properties" id="edgeLabel.Connection.&lt;ID&gt;">
+                  <ifAction description="If: Connection has From Device and To Device">
+                    <andCondition>
+                      <unaryCondition valueID1="$elementExists(Device,&lt;ID&gt;,&lt;From Device&gt;)" valueID2="true"/>
+                      <unaryCondition valueID1="$elementExists(Device,&lt;ID&gt;,&lt;To Device&gt;)" valueID2="true"/>
+                    </andCondition>
                     <actionList>
-                      <setOptionAction optionName="labeling:all:edgeLabel:region" value="EDGE_LABEL_REGION_OVER"/>
+                      <addEdgeAction id="edge.Connection.&lt;ID&gt;" replaceTags="true" source="node.Device.&lt;From Device&gt;" tags="Connection" target="node.Device.&lt;To Device&gt;" templateName="Connection"/>
+                      <addEdgeLabelAction id="edgeLabel.Connection.&lt;ID&gt;" parent="edge.Connection.&lt;ID&gt;" replaceTags="true" tags="Connection" templateName="Capacity"/>
+                      <setEdgeLabelLayoutPropertiesAction description="Set Edge Label Layout Properties" id="edgeLabel.Connection.&lt;ID&gt;">
+                        <actionList>
+                          <setOptionAction optionName="labeling:all:edgeLabel:region" value="EDGE_LABEL_REGION_OVER"/>
+                        </actionList>
+                      </setEdgeLabelLayoutPropertiesAction>
                     </actionList>
-                  </setEdgeLabelLayoutPropertiesAction>
+                  </ifAction>
                 </actions>
               </rule>
             </modelElementRules>
@@ -337,38 +334,72 @@
                 <customization/>
               </actionItem>
               <separatorItem tags="GLOBAL_TAG"/>
-              <actionItem action="Layout.Bundle Layout" resource="14" tags="GLOBAL_TAG" text="Bundle Layout">
+              <actionItem action="Tool.Activate Tool" resource="14" tags="GLOBAL_TAG" text="New Device">
+                <disabledIcon/>
+                <customization>
+                  <tool name="New Device Tool"/>
+                </customization>
+              </actionItem>
+              <separatorItem tags="GLOBAL_TAG"/>
+              <actionItem action="Tool.Activate Tool" resource="15" tags="GLOBAL_TAG" text="New Connection">
+                <disabledIcon/>
+                <customization>
+                  <tool name="New Connection Tool"/>
+                </customization>
+              </actionItem>
+              <separatorItem tags="GLOBAL_TAG"/>
+              <actionItem action="Tool.Activate Tool" resource="16" tags="GLOBAL_TAG" text="Delete">
+                <disabledIcon/>
+                <customization>
+                  <tool name="Delete Tool"/>
+                </customization>
+              </actionItem>
+              <separatorItem tags="GLOBAL_TAG"/>
+              <actionItem action="Layout.Bundle Layout" resource="17" tags="GLOBAL_TAG" text="Bundle Layout">
                 <disabledIcon/>
                 <customization/>
               </actionItem>
-              <actionItem action="Layout.Circular Layout" resource="15" tags="GLOBAL_TAG" text="Circular Layout">
+              <actionItem action="Layout.Circular Layout" resource="18" tags="GLOBAL_TAG" text="Circular Layout">
                 <disabledIcon/>
                 <customization/>
               </actionItem>
-              <actionItem action="Layout.Hierarchical Layout" resource="16" tags="GLOBAL_TAG" text="Hierarchical Layout">
+              <actionItem action="Layout.Hierarchical Layout" resource="19" tags="GLOBAL_TAG" text="Hierarchical Layout">
                 <disabledIcon/>
                 <customization/>
               </actionItem>
-              <actionItem action="Layout.Orthogonal Layout" resource="17" tags="GLOBAL_TAG" text="Orthogonal Layout">
+              <actionItem action="Layout.Orthogonal Layout" resource="20" tags="GLOBAL_TAG" text="Orthogonal Layout">
                 <disabledIcon/>
                 <customization/>
               </actionItem>
-              <actionItem action="Layout.Symmetric Layout" resource="18" tags="GLOBAL_TAG" text="Symmetric Layout">
+              <actionItem action="Layout.Symmetric Layout" resource="21" tags="GLOBAL_TAG" text="Symmetric Layout">
                 <disabledIcon/>
                 <customization/>
               </actionItem>
               <separatorItem tags="GLOBAL_TAG"/>
-              <actionItem action="Layout.Global Layout" resource="19" tags="GLOBAL_TAG" text="Global Layout">
+              <actionItem action="Layout.Global Layout" resource="22" tags="GLOBAL_TAG" text="Global Layout">
                 <disabledIcon/>
                 <customization/>
               </actionItem>
-              <actionItem action="Layout.Incremental Layout" resource="20" tags="GLOBAL_TAG" text="Incremental Layout">
+              <actionItem action="Layout.Incremental Layout" resource="23" tags="GLOBAL_TAG" text="Incremental Layout">
                 <disabledIcon/>
                 <customization/>
               </actionItem>
             </toolbar>
             <contextMenu/>
             <toolConfiguration>
+              <tool name="Move Tool" type="MoveTool"/>
+              <tool name="Delete Tool" type="DeleteTool">
+                <customization>
+                  <toolRules>
+                    <rule name="Delete Selected">
+                      <trueCondition/>
+                      <actions>
+                        <deleteModelElementsAction/>
+                      </actions>
+                    </rule>
+                  </toolRules>
+                </customization>
+              </tool>
               <tool name="Select Tool" type="SelectTool">
                 <customization>
                   <moveChildTool name="Move Tool"/>
@@ -377,14 +408,9 @@
                   <editTextChildTool name="Edit Text Tool"/>
                 </customization>
               </tool>
-              <tool name="Move Tool" type="MoveTool"/>
+              <tool name="Interactive Zoom Tool" type="InteractiveZoomTool"/>
+              <tool name="Marquee Zoom Tool" type="MarqueeZoomTool"/>
               <tool name="Resize Tool" type="ResizeTool"/>
-              <tool name="Delete Tool" type="DeleteTool">
-                <customization>
-                  <toolRules/>
-                </customization>
-              </tool>
-              <tool name="Edit Text Tool" type="EditTextTool"/>
               <tool name="Reconnect Tool" type="ReconnectTool">
                 <customization>
                   <toolRules/>
@@ -396,8 +422,31 @@
                 </customization>
               </tool>
               <tool name="Pan Tool" type="PanTool"/>
-              <tool name="Marquee Zoom Tool" type="MarqueeZoomTool"/>
-              <tool name="Interactive Zoom Tool" type="InteractiveZoomTool"/>
+              <tool name="Edit Text Tool" type="EditTextTool"/>
+              <tool name="New Device Tool" type="AtTool">
+                <customization>
+                  <toolRules>
+                    <rule name="Rule #1">
+                      <trueCondition/>
+                      <actions>
+                        <customAction name="Custom Editing Tools.Create New Device"/>
+                      </actions>
+                    </rule>
+                  </toolRules>
+                </customization>
+              </tool>
+              <tool name="New Connection Tool" type="BetweenTool">
+                <customization>
+                  <toolRules>
+                    <rule name="Rule #1">
+                      <customCondition name="Custom Editing Tools.Is Local Connection"/>
+                      <actions>
+                        <customAction name="Custom Editing Tools.Create New Connection"/>
+                      </actions>
+                    </rule>
+                  </toolRules>
+                </customization>
+              </tool>
               <tool name="Link Navigation Tool" type="LinkNavigationTool"/>
               <tool name="Select And Pan Tool" type="CombinedTool">
                 <customization>
@@ -457,7 +506,7 @@
             <preference name="rendering:blinkInterval" value="0.0"/>
             <preference name="rendering:drawNodesBeforeEdges" value="true"/>
             <preference name="rendering:highlightColor" value="0 255 255 64"/>
-            <preference name="rendering:hoverColor" value="102 255 51 64"/>
+            <preference name="rendering:hoverColor" value="255 255 51 64"/>
             <preference name="rendering:refreshInterval" value="0.0"/>
             <preference name="rendering:selectColor" value="40 94 160 64"/>
             <preference name="rendering:simplifiedLowResolutionDrawing" value="true"/>

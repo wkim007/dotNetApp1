@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TSX>
+
+	<toolRuleConditionDefinitions>
+		<condition name="Custom Editing Tools.Is Local Connection" class="CustomEditingTools.condition.LocalConnectionToolRuleConditionDefinition"/>
+	</toolRuleConditionDefinitions>
+
+	<toolRuleActionDefinitions>
+		<action name="Custom Editing Tools.Create New Device" class="CustomEditingTools.action.NewDeviceToolRuleActionDefinition"/>
+		<action name="Custom Editing Tools.Create New Connection" class="CustomEditingTools.action.NewConnectionToolRuleActionDefinition"/>
+	</toolRuleActionDefinitions>
+
+</TSX>
