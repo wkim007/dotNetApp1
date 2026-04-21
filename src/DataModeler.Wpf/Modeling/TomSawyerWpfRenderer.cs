@@ -217,17 +217,8 @@ namespace DataModeler.Wpf.Modeling
             {
                 _projectFilePath = ResolveProjectFilePath(_projectFilePath);
                 _dataFilePath = ResolveDataFilePath(_dataFilePath);
-                _moduleName = ResolveValue("TS_PROJECT_MODULE", "Network");
-                _schemaName = ResolveValue("TS_PROJECT_SCHEMA", _moduleName);
-                _viewName = ResolveValue("TS_PROJECT_VIEW", "Network Map");
-                _integratorName = ResolveValue("TS_PROJECT_INTEGRATOR", "Network Excel Data");
-
                 AppendDiagnostic(string.Format("Resolved project file: {0}", SafeValue(_projectFilePath)));
                 AppendDiagnostic(string.Format("Resolved data file: {0}", SafeValue(_dataFilePath)));
-                AppendDiagnostic(string.Format("Resolved module name: {0}", _moduleName));
-                AppendDiagnostic(string.Format("Resolved schema name: {0}", _schemaName));
-                AppendDiagnostic(string.Format("Resolved view name: {0}", _viewName));
-                AppendDiagnostic(string.Format("Resolved integrator name: {0}", _integratorName));
 
                 if (string.IsNullOrWhiteSpace(_projectFilePath) || !File.Exists(_projectFilePath))
                 {
@@ -249,6 +240,16 @@ namespace DataModeler.Wpf.Modeling
                 reader.setProject(_project);
                 reader.read();
                 AppendDiagnostic("TSNProjectXMLReader.read() completed.");
+
+                _moduleName = ResolveModuleName(_project, _moduleName);
+                _schemaName = _moduleName;
+                _viewName = ResolveViewName(_project, _moduleName, _viewName);
+                _integratorName = ResolveIntegratorName(_project, _moduleName, _integratorName);
+
+                AppendDiagnostic(string.Format("Resolved module name: {0}", SafeValue(_moduleName)));
+                AppendDiagnostic(string.Format("Resolved schema name: {0}", SafeValue(_schemaName)));
+                AppendDiagnostic(string.Format("Resolved view name: {0}", SafeValue(_viewName)));
+                AppendDiagnostic(string.Format("Resolved integrator name: {0}", SafeValue(_integratorName)));
 
                 _project.getSchema(_schemaName).initModel(_model);
                 AppendDiagnostic("Project schema initialized TSDefaultModel.");
@@ -422,8 +423,135 @@ namespace DataModeler.Wpf.Modeling
             return string.IsNullOrWhiteSpace(value) ? "(none)" : value;
         }
 
+        private static string ResolveModuleName(TSProject project, string currentModuleName)
+        {
+            if (!string.IsNullOrWhiteSpace(currentModuleName) && project.getModule(currentModuleName) != null)
+            {
+                return currentModuleName;
+            }
+
+            string configuredModule = Environment.GetEnvironmentVariable("TS_PROJECT_MODULE");
+            if (!string.IsNullOrWhiteSpace(configuredModule) && project.getModule(configuredModule) != null)
+            {
+                return configuredModule;
+            }
+
+            java.util.List moduleNames = project.getModuleNames();
+            return GetFirstListValue(moduleNames);
+        }
+
+        private static string ResolveViewName(TSProject project, string moduleName, string currentViewName)
+        {
+            if (string.IsNullOrWhiteSpace(moduleName))
+            {
+                return null;
+            }
+
+            java.util.List viewNames = project.getViewNames(moduleName);
+            if (ListContains(viewNames, currentViewName))
+            {
+                return currentViewName;
+            }
+
+            string configuredView = Environment.GetEnvironmentVariable("TS_PROJECT_VIEW");
+            if (ListContains(viewNames, configuredView))
+            {
+                return configuredView;
+            }
+
+            string preferredDrawingView = FindPreferredValue(viewNames, "map", "drawing", "graph");
+            return preferredDrawingView ?? GetFirstListValue(viewNames);
+        }
+
+        private static string ResolveIntegratorName(TSProject project, string moduleName, string currentIntegratorName)
+        {
+            if (string.IsNullOrWhiteSpace(moduleName))
+            {
+                return null;
+            }
+
+            TSModule module = project.getModule(moduleName);
+            if (module == null)
+            {
+                return null;
+            }
+
+            java.util.List integratorNames = module.getIntegratorNames();
+            if (ListContains(integratorNames, currentIntegratorName))
+            {
+                return currentIntegratorName;
+            }
+
+            string configuredIntegrator = Environment.GetEnvironmentVariable("TS_PROJECT_INTEGRATOR");
+            if (ListContains(integratorNames, configuredIntegrator))
+            {
+                return configuredIntegrator;
+            }
+
+            string preferredIntegrator = FindPreferredValue(integratorNames, "excel", "xml", "json", "rest", "data");
+            return preferredIntegrator ?? GetFirstListValue(integratorNames);
+        }
+
+        private static bool ListContains(java.util.List values, string target)
+        {
+            if (values == null || string.IsNullOrWhiteSpace(target))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < values.size(); i++)
+            {
+                object current = values.get(i);
+                if (string.Equals(Convert.ToString(current), target, StringComparison.Ordinal))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static string GetFirstListValue(java.util.List values)
+        {
+            if (values == null || values.size() == 0)
+            {
+                return null;
+            }
+
+            return Convert.ToString(values.get(0));
+        }
+
+        private static string FindPreferredValue(java.util.List values, params string[] keywords)
+        {
+            if (values == null)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < values.size(); i++)
+            {
+                string current = Convert.ToString(values.get(i));
+                if (string.IsNullOrWhiteSpace(current))
+                {
+                    continue;
+                }
+
+                string normalized = current.ToLowerInvariant();
+                for (int keywordIndex = 0; keywordIndex < keywords.Length; keywordIndex++)
+                {
+                    if (normalized.Contains(keywords[keywordIndex]))
+                    {
+                        return current;
+                    }
+                }
+            }
+
+            return null;
+        }
+
         private void ResetModel()
         {
+            _moduleName = null;
             _model = new TSDefaultModel();
             AppendDiagnostic("Fresh TSDefaultModel created.");
         }
